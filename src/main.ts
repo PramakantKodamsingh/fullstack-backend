@@ -12,7 +12,8 @@ async function bootstrap() {
     .setTitle('FullStack API')
     .setDescription('Backend API')
     .setVersion('1.0')
-    .addServer(`http://localhost:${port}`)
+    // Address Swagger's "Try it out" calls; set PUBLIC_API_URL in production
+    .addServer(process.env.PUBLIC_API_URL ?? `http://localhost:${port}`)
     .addBearerAuth()
     .build();
   SwaggerModule.setup('docs', app, () => SwaggerModule.createDocument(app, swaggerConfig));
