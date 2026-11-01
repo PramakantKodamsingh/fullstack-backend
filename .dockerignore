@@ -1,0 +1,13 @@
+# Not sent to Docker when building the image: rebuilt inside, secret, or not needed to run
+node_modules
+dist
+coverage
+src/generated
+*.tsbuildinfo
+
+.env
+.env.*
+
+.git
+.github
+test
